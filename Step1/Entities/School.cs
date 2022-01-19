@@ -14,10 +14,17 @@ namespace CoreSchool.Entities
 		public string? City { get; set; }
 		public SchoolTypes SchoolType { get; set; }
 		public School(string name, int foundationYear) => (Name, FoundationYear) = (name, foundationYear);
+		public School(string name, int foundationYear, SchoolTypes schoolType, string country = "", string city = "")
+		{
+			(Name, FoundationYear) = (name, foundationYear);
+			Country = country;
+			City = city;
+		}
+
 		public override string ToString()
 		{
 
-			return $"Name: {Name}, Type: {SchoolType}\nCountry: {Country}, City: {City}";
+			return $"Name: \"{Name}\", Type: {SchoolType}{System.Environment.NewLine}Country: {Country}, City: {City}";
 		}
 	}
 }
