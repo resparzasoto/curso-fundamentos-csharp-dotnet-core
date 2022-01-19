@@ -9,8 +9,9 @@ namespace Step1
 			
 			school.Country =  "Colombia";
 			school.City = "Bogota";
+			school.SchoolType = SchoolTypes.Elementary;
 
-			Console.WriteLine(school.Name);
+			Console.WriteLine(school);
 		}
 	}
 }
