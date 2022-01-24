@@ -1,4 +1,5 @@
-﻿using CoreSchool.Entities;
+﻿using System.Runtime.InteropServices.ComTypes;
+using CoreSchool.Entities;
 
 namespace Step2
 {
@@ -36,16 +37,50 @@ namespace Step2
 
 			Console.WriteLine(school);
 			Console.WriteLine("================");
-			PrintCourses(courses);
+			PrintCoursesWhile(courses);
+			Console.WriteLine("================");
+			PrintCoursesDoWhile(courses);
+			Console.WriteLine("================");
+			PrintCoursesFor(courses);
+			Console.WriteLine("================");
+			PrintCoursesForeach(courses);
 		}
 
-		private static void PrintCourses(Course[] courses) {
+		private static void PrintCoursesWhile(Course[] courses)
+		{
 			int counter = 0;
 
 			while (counter < courses.Length)
 			{
-				Console.WriteLine($"Name {courses[counter]}, Id {courses[counter].UniqueId}");
+				Console.WriteLine($"Name {courses[counter].Name}, Id {courses[counter].UniqueId}");
 				counter++;
+			}
+		}
+
+		private static void PrintCoursesDoWhile(Course[] courses)
+		{
+			int counter = 0;
+
+			do
+			{
+				Console.WriteLine($"Name {courses[counter].Name}, Id {courses[counter].UniqueId}");
+				counter++;
+			} while (counter < courses.Length);
+		}
+
+		private static void PrintCoursesFor(Course[] courses)
+		{
+			for (int i = 0; i < courses.Length; i++)
+			{
+				Console.WriteLine($"{nameof(Course.Name)} {courses[i].Name}, {nameof(Course.UniqueId)} {courses[i].UniqueId}");
+			}
+		}
+
+		private static void PrintCoursesForeach(Course[] courses)
+		{
+			foreach (var course in courses)
+			{
+				Console.WriteLine($"{nameof(Course.Name)} {course.Name}, {nameof(Course.UniqueId)} {course.UniqueId}");
 			}
 		}
 	}
