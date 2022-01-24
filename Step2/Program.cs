@@ -4,26 +4,49 @@ namespace Step2
 {
 	class Program
 	{
-		static void Main(string[] args) {
-			School school = new School("Platzi Academy", 2012, SchoolTypes.Elementary, city: "Bogota", country: "Colombia");
+		static void Main(string[] args)
+		{
+			School school = new School
+			(
+				"Platzi Academy",
+				2012,
+				SchoolTypes.Elementary,
+				city: "Bogota",
+				country: "Colombia"
+			);
 
-			Curso curso1 = new Curso() {
+			Course[] courses = new Course[3];
+
+			courses[0] = new Course()
+			{
 				Name = "101",
 			};
 
-			Curso curso2 = new Curso() {
+			Course curso2 = new Course()
+			{
 				Name = "201"
 			};
 
-			Curso curso3 = new Curso() {
+			courses[1] = curso2;
+
+			courses[2] = new Course()
+			{
 				Name = "301"
 			};
 
 			Console.WriteLine(school);
 			Console.WriteLine("================");
-			Console.WriteLine($"{curso1.Name} , {curso1.UniqueId}");
-			Console.WriteLine($"{curso2.Name} , {curso2.UniqueId}");
-			Console.WriteLine($"{curso3}");
+			PrintCourses(courses);
+		}
+
+		private static void PrintCourses(Course[] courses) {
+			int counter = 0;
+
+			while (counter < courses.Length)
+			{
+				Console.WriteLine($"Name {courses[counter]}, Id {courses[counter].UniqueId}");
+				counter++;
+			}
 		}
 	}
 }
