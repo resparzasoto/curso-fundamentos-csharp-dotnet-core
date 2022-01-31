@@ -50,20 +50,15 @@ namespace Step2
 				}
 			};
 
-			school.Courses.AddRange(anotherCollection);
+			// school.Courses.AddRange(anotherCollection);
+			// PrintCoursesSchool(school);
+
+			// writing with delegate expression
+			// school.Courses.RemoveAll(delegate (Course course) { return course.Name == "301"; });
+			// writing with lambda expression
+			// school.Courses.RemoveAll(course => course.Name == "301");
+
 			PrintCoursesSchool(school);
-
-			Predicate<Course> match = MatchRemoveCourse;
-			school.Courses.RemoveAll(match);
-
-			Console.WriteLine("=====================");
-			Console.WriteLine("Print then of remove");
-			PrintCoursesSchool(school);
-		}
-
-		private static bool MatchRemoveCourse(Course course)
-		{
-			return course.Name == "301";
 		}
 
 		private static void PrintCoursesSchool(School school)
