@@ -1,5 +1,6 @@
 ﻿using CoreSchool.App;
 using CoreSchool.Entities;
+using CoreSchool.Util;
 
 namespace CoreSchool
 {
@@ -10,15 +11,14 @@ namespace CoreSchool
 			SchoolEngine engine = new SchoolEngine();
 			engine.Initializing();
 
+			Printer.WriteTitle("WELCOME TO THE SCHOOL");
+			Printer.Beep(10000, count: 10);
+
 			PrintCoursesSchool(engine.School);
 		}
 
 		private static void PrintCoursesSchool(School school)
 		{
-			Console.WriteLine("=====================");
-			Console.WriteLine("Courses of the School");
-			Console.WriteLine("=====================");
-
 			if (school?.Courses != null)
 			{
 				foreach (var course in school.Courses)
