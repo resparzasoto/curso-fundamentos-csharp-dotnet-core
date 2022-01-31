@@ -5,7 +5,7 @@ namespace CoreSchool.Entities
         public string UniqueId { get; private set; }
         public string Name { get; set; }
 
-        public JourneyTypes Journey { get; set; }
+        public JourneyTypes Journey { get; set; } = JourneyTypes.Morning;
 
         public Course()
         {

@@ -14,7 +14,7 @@ namespace CoreSchool.Entities
 		public string? City { get; set; }
 		public SchoolTypes SchoolType { get; set; }
 
-		public Course[] Courses { get; set; }
+		public List<Course> Courses { get; set; }
 		public School(string name, int foundationYear) => (Name, FoundationYear) = (name, foundationYear);
 		public School(string name, int foundationYear, SchoolTypes schoolType, string country = "", string city = "")
 		{

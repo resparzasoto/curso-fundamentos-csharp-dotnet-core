@@ -15,7 +15,7 @@ namespace Step2
 				country: "Colombia"
 			);
 
-			school.Courses = new Course[]
+			school.Courses = new List<Course>()
 			{
 				new Course()
 				{
@@ -30,6 +30,28 @@ namespace Step2
 					Name = "301"
 				}
 			};
+
+			school.Courses.Add(new Course() { Name = "102", Journey = JourneyTypes.Afternoon });
+			school.Courses.Add(new Course() { Name = "202", Journey = JourneyTypes.Afternoon });
+
+			var anotherCollection = new List<Course>()
+			{
+				new Course()
+				{
+					Name = "401",
+				},
+				new Course()
+				{
+					Name = "501"
+				},
+				new Course()
+				{
+					Name = "502"
+				}
+			};
+
+			// anotherCollection.Clear();
+			school.Courses.AddRange(anotherCollection);
 
 			PrintCoursesSchool(school);
 		}
