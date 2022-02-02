@@ -1,15 +1,15 @@
 namespace CoreSchool.Entities
 {
-    public class Course
-    {
-        public string UniqueId { get; private set; }
-        public string Name { get; set; }
+	public class Course : BaseEntity
+	{
+		public JourneyTypes Journey { get; set; } = JourneyTypes.Morning;
 
-        public JourneyTypes Journey { get; set; } = JourneyTypes.Morning;
+		public List<Signature> Signatures { get; set; }
 
-        public Course()
-        {
-            UniqueId = Guid.NewGuid().ToString();
-        }
-    }
+		public List<Student> Students { get; set; }
+
+		public Course() : base()
+		{
+		}
+	}
 }
