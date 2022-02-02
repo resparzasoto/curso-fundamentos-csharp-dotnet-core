@@ -4,9 +4,9 @@ namespace CoreSchool.Entities
 	{
 		public JourneyTypes Journey { get; set; } = JourneyTypes.Morning;
 
-		public List<Signature> Signatures { get; set; }
+		public List<Signature> Signatures { get; set; } = new List<Signature>();
 
-		public List<Student> Students { get; set; }
+		public List<Student> Students { get; set; } = new List<Student>();
 
 		public Course() : base()
 		{
